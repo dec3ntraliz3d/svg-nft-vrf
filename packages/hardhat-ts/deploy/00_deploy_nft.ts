@@ -9,6 +9,7 @@ const func: DeployFunction = async (hre: HardhatRuntimeEnvironment) => {
   const chainId = await hre.getChainId();
 
   if (chainId == '31337') {
+
     // Deploy mocks only if current network is localhost
 
     console.log('---------------------------------------------------------------------');
@@ -43,14 +44,11 @@ const func: DeployFunction = async (hre: HardhatRuntimeEnvironment) => {
     const createTx = await nftContract.create();
     const txReceipt = await createTx.wait(1);
     const requestId = txReceipt?.logs[3]?.topics[1];
+    const tokenId = txReceipt?.logs[3]?.topics[2];
 
     const randomTx = await vrfCoordinatorMock.callBackWithRandomness(requestId, 67576, nftContract.address);
-    const randomTxReceipt = await randomTx.wait(1);
-    // console.log("RandomTxReceipt", randomTxReceipt)
-
-    // get token URI of the minted NFT
-
-    const tokenUri: string = await nftContract.tokenURI(1);
+    await randomTx.wait(2);
+    const tokenUri: string = await nftContract.tokenURI(tokenId);
     console.log(tokenUri);
   } else {
     const args = [ChainlinkConfig[chainId].vrfCoordinator, ChainlinkConfig[chainId].linkToken, ChainlinkConfig[chainId].keyHash, ChainlinkConfig[chainId].fee];

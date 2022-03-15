@@ -1,4 +1,21 @@
-# 🏗 Scaffold-Eth Typescript
+# 🏗 SVG NFT with Chainlink VRF
+
+## [Rinkeby Demo](https://outgoing-apple.surge.sh "Mint a random NFT with Chainlink vrf")
+### Built with 🏗 Scaffold-ETH - Typescript
+![screenshot](packages/vite-app-ts/public/assets/svg-nfg-vrf.png)
+
+
+
+
+# 🏄‍♂️ Quick Start
+
+Prerequisites: [Node (v16 LTS)](https://nodejs.org/en/download/) plus [Yarn](https://classic.yarnpkg.com/en/docs/install/) and [Git](https://git-scm.com/downloads)
+
+> clone/fork :
+
+```bash
+git clone https://github.com/dec3ntraliz3d/svg-nft-vrf.git
+```
 
 ## Typescript
 
@@ -25,7 +42,12 @@ Running the app
    yarn chain
    ```
 
-3. run the app, `open a new command prompt`
+3. Change network, infura key , burner wallet config in /packages/vite-app-ts/.env file.
+
+   VITE_APP_TARGET_NETWORK=rinkeby\
+   HARDHAT_TARGET_NETWORK=rinkeby
+
+4. run the app, `open a new command prompt`
 
    ```bash
    # build hardhat & external contracts types
@@ -35,24 +57,17 @@ Running the app
    # start vite 
    yarn start 
    ```
-   
+
+## Chainlink VRF consideration 
+
+Since local hardhat network don't have a chainlink node to provide random number
+we need to deploy VRFCorodinatorMock and Mock Chainlink token which is available on [Chainlink github](https://github.com/smartcontractkit/chainlink) repo. Check /packages/hardhat-ts/deploy scripts for more details on how to deploy mocks. 
+
 ## Guides
 
 - Check out [eth-hooks docs](https://scaffold-eth.github.io/eth-hooks/docs/overview) for example of how to use hooks
 - you can look at [speedrun ethereum](https://speedrunethereum.com/) to get started with scaffold-eth-typescript and web3.  
   - 🏁 Make sure to click on the typescript tab!
-
-
-## Overview
-
-Everything you need to build on Ethereum! 🚀 Quickly experiment with Solidity using a frontend that adapts to your smart contract:
-
-![image](https://user-images.githubusercontent.com/2653167/124158108-c14ca380-da56-11eb-967e-69cde37ca8eb.png)
-
-- 🔏 Edit your smart contract `YourContract.sol` in `packages/hardhat-ts/contracts`
-- 📝 Edit your frontend `MainPage.jsx` in `packages/vite-app-ts/src`
-- 💼 Edit your deployment scripts in `packages/hardhat-ts/deploy`
-- 📱 Open http://localhost:3000 to see the app
 
 ## More Information!
 ### 📚 Documentation
@@ -60,14 +75,6 @@ Everything you need to build on Ethereum! 🚀 Quickly experiment with Solidity 
 Documentation, tutorials, challenges, and many more resources, visit: [docs.scaffoldeth.io](https://docs.scaffoldeth.io)
 
 Eth-hooks documentation is [here](https://scaffold-eth.github.io/eth-hooks/).  Learn how to use the contexts here.
-
-
-### 🔭 Learning Solidity
-
-Read the docs: https://docs.soliditylang.org
-
-Go through each topic from [solidity by example](https://solidity-by-example.org) editing `YourContract.sol` in **🏗 scaffold-eth**
-
 
 ### 🏃💨 Speedrun Ethereum
 Register as a builder [here](https://speedrunethereum.com) and start on some of the challenges and build a portfolio.
