@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import '~~/styles/main-page.css';
 
-import { GenericContract } from 'eth-components/ant/generic-contract';
 import { useContractReader, useBalance, useEthersAdaptorFromProviderOrSigners, useEventListener } from 'eth-hooks';
 import { useEthersContext } from 'eth-hooks/context';
 import { useDexEthPrice } from 'eth-hooks/dapps';
@@ -14,7 +13,7 @@ import { useScaffoldHooksExamples as useScaffoldHooksExamples } from './componen
 
 import { useBurnerFallback } from '~~/components/main/hooks/useBurnerFallback';
 import { useScaffoldProviders as useScaffoldAppProviders } from '~~/components/main/hooks/useScaffoldAppProviders';
-import { Hints, ExampleUI } from '~~/components/pages';
+import { OnChainNFT } from '~~/components/pages';
 import { BURNER_FALLBACK_ENABLED, MAINNET_PROVIDER } from '~~/config/appConfig';
 import { useAppContracts, useConnectAppContracts, useLoadAppContracts } from '~~/config/contractContext';
 import { NETWORKS } from '~~/models/constants/networks';
@@ -108,10 +107,13 @@ export const Main: FC = () => {
         <MainPageMenu route={route} setRoute={setRoute} />
         <Switch>
           <Route exact path="/">
-            <MainPageContracts scaffoldAppProviders={scaffoldAppProviders} />
+            <OnChainNFT mainnetProvider={scaffoldAppProviders.mainnetAdaptor?.provider} />
           </Route>
           {/* you can add routes here like the below examlples */}
-          <Route path="/hints">
+          <Route path="/debug">
+            <MainPageContracts scaffoldAppProviders={scaffoldAppProviders} />
+          </Route>
+          {/* <Route path="/hints">
             <Hints
               address={ethersContext?.account ?? ''}
               yourCurrentBalance={yourCurrentBalance}
@@ -135,7 +137,7 @@ export const Main: FC = () => {
                 blockExplorer={NETWORKS.mainnet.blockExplorer}
               />
             )}
-          </Route>
+          </Route> */}
           {/* Subgraph also disabled in MainPageMenu, it does not work, see github issue! */}
           {/*
           <Route path="/subgraph">

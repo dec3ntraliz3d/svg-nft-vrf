@@ -34,18 +34,12 @@ export const MainPageHeader: FC<IMainPageHeaderProps> = (props) => {
     <>
       <div>
         <PageHeader
-          title="🏭 Scaffold-Eth"
+          title="🏭 SVG Nft -Chainlink VRF "
           subTitle={
             <span>
-              v2.1 - [
-              <a href="https://youtu.be/aYMj00JoIug" target="_blank" rel="noreferrer">
-                <span style={{ marginRight: 4 }}>🎥 </span> 8min speed run
+              <a href="https://github.com/dec3ntraliz3d/svg-nft-vrf" target="_blank" rel="noreferrer">
+                <span style={{ marginRight: 4 }}>-</span> by @dec3ntraliz3d
               </a>
-              ] - [
-              <a href="https://trello.com/b/ppbUs796/buidlguidlcom-idea-board" target="_blank" rel="noreferrer">
-                <span style={{ marginRight: 4 }}>💡 </span> trello
-              </a>
-              ]{' '}
             </span>
           }
           style={{ cursor: 'pointer' }}

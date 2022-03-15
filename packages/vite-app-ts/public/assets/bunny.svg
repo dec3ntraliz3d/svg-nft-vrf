@@ -1,0 +1,16 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+
+ <g>
+  <title>Layer 1</title>
+  <g id="svg_1" stroke="#000">
+   <ellipse id="svg_2" ry="60.763" rx="72.602" cy="131.84816" cx="99.99999" fill="hsl(20,35%,40%)"/>
+   <ellipse transform="rotate(-12.252 75.992 46.8452)" id="svg_3" class="ear" ry="38.152" rx="10.241" cy="46.84516" cx="75.99199" fill="hsl(185,45%,50%)"/>
+   <ellipse transform="rotate(11.998 122.578 46.8452)" id="svg_4" class="ear" ry="38.152" rx="10.241" cy="46.84516" cx="122.57799" fill="hsl(185,45%,50%)"/>
+   <ellipse id="svg_5" class="eye" ry="8.634" rx="8.233" cy="119.99216" cx="81.13899" fill="hsl(100,45%,50%)"/>
+   <ellipse id="svg_6" class="eye" ry="8.634" rx="8.233" cy="120.39416" cx="118.92199" fill="hsl(100,45%,50%)"/>
+   <ellipse id="svg_7" fill="none" cx="119.16399" cy="120.49416" rx="0.51" ry="0.656"/>
+   <ellipse id="svg_8" fill="none" cx="81.40899" cy="119.61916" rx="0.51" ry="0.656"/>
+   <path id="svg_9" fill="none" d="m81.19199,146.55816l39.157,-0.402"/>
+  </g>
+ </g>
+</svg>
