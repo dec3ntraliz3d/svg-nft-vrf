@@ -1,6 +1,6 @@
 # 🏗 SVG NFT with Chainlink VRF
 
-## [Rinkeby Demo](https://outgoing-apple.surge.sh "Mint a random NFT with Chainlink vrf")
+## [Rinkeby Demo](https://svg-bunny.surge.sh "Mint a random NFT with Chainlink vrf")
 ### Built with 🏗 Scaffold-ETH - Typescript
 ![screenshot](packages/vite-app-ts/public/assets/svg-nfg-vrf.png)
 
